@@ -23,25 +23,25 @@ void readfromfile(const char *fn, student s[], int *cnt)
         exit(EXIT_FAILURE);
     }
     int i = 0;
-    while (fscanf(file, "%d %s %s %s", s[i].stt, s[i].mssv, s[i].name, s[i].phone) != EOF)
+    while (fscanf(file, "%d %s %s %s", &s[i].stt, s[i].mssv, s[i].name, s[i].phone) != EOF)
     {
         i ++;
     }
     *cnt = i;
-    fclose(fn);
+    fclose(file);
 }
 // nhap diem vao file cho sinh vien
-void inputscore(student *s, int *cnt)
+void inputscore(student s[], int cnt)
 {
     for(int i = 0; i < cnt; i ++)
     {
         printf("nhap diem cho sinh vien %s (%s)", s[i].name, s[i].mssv);
-        scanf("%d %s %s %s", &s[i].stt,s[i].mssv, &s[i].name, &s[i].phone);
+        scanf("%f", &s[i].score);
     }
 
 }
 // viet them thong tin diem vao file cho sinh vien
-void writetofile(const char *fn, student s[], int *cnt)
+void writetofile(const char *fn, student s[], int cnt)
 {
     FILE *file = fopen(fn, "w");
     if(file == NULL)
@@ -51,9 +51,9 @@ void writetofile(const char *fn, student s[], int *cnt)
     }
     for(int i = 0; i < cnt; i ++)
     {
-        fprintf(file, "%d %s %s %s %.2lf", s[i].stt, s[i].mssv, s[i].name, s[i].phone, s[i].score);
+        fprintf(file, "%d %s %s %s %.2f\n", s[i].stt, s[i].mssv, s[i].name, s[i].phone, s[i].score);
     }
-    fclose(fn);
+    fclose(file);
 }
 
 // in file thong tin cho sinh vien
@@ -61,8 +61,9 @@ void printfile(student s[], int cnt)
 {
     for(int i = 0; i < cnt; i ++)
     {
-        printf("%d %s %s %s %.2lf", s[i].stt, s[i].mssv, s[i].name, s[i].phone, s[i].score);
+        printf("%d %s %s %s %.2f\n", s[i].stt, s[i].mssv, s[i].name, s[i].phone, s[i].score);
     }
+    printf("\n");
 
 }
 int main()
@@ -70,8 +71,8 @@ int main()
     student s[MAX_STUDENT];
     int cnt = 0; 
     readfromfile("student_read.txt", s, &cnt);
-    inputscore(s, &cnt);
-    writetofile("student_write.txt", s, &cnt);
+    inputscore(s, cnt);
+    writetofile("student_write.txt", s, cnt);
     printfile (s, cnt);
     return 0;
 }
