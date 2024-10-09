@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/macbook/Documents/gitfirst/student.c/student'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _readfromfile, symObjAddr: 0x0, symBinAddr: 0x1000039B8, symSize: 0x120 }
+  - { offset: 0x4E, size: 0x8, addend: 0x0, symName: _readfromfile, symObjAddr: 0x0, symBinAddr: 0x1000039B8, symSize: 0x120 }
+  - { offset: 0xAA, size: 0x8, addend: 0x0, symName: _inputscore, symObjAddr: 0x120, symBinAddr: 0x100003AD8, symSize: 0x10C }
+  - { offset: 0xF8, size: 0x8, addend: 0x0, symName: _writetofile, symObjAddr: 0x22C, symBinAddr: 0x100003BE4, symSize: 0x13C }
+  - { offset: 0x162, size: 0x8, addend: 0x0, symName: _printfile, symObjAddr: 0x368, symBinAddr: 0x100003D20, symSize: 0xE4 }
+  - { offset: 0x1B0, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x44C, symBinAddr: 0x100003E04, symSize: 0xC0 }
+...
