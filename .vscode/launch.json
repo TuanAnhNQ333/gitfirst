@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/macbook/Documents/gitfirst",
-      "program": "/Users/macbook/Documents/gitfirst/build/Debug/outDebug"
+      "cwd": "/Users/macbook/Documents/gitfirst/student.c",
+      "program": "/Users/macbook/Documents/gitfirst/student.c/build/Debug/outDebug"
     }
   ]
 }
