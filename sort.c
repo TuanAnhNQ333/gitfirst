@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-#define MAX_STRING 50
 void sort(int *s, int n)
 {
     for(int i = 0; i < n; i ++)
@@ -18,10 +17,10 @@ void sort(int *s, int n)
 }
 int main()
 {
-    int s[MAX_STRING];
     int n;
-    int i;
     scanf("%d\n", &n);
+    int s[n];
+    int i;
     for(int i = 0; i < n; i ++)
     {
         scanf("%d", &s[i]);
